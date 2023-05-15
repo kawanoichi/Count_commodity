@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HelloController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('hello', function () {
-    return view('hello.index');
+Route::get('/', function () {
+    // welcom.blade.phpのファイル(HTMLのソースコード)を返す
+    return view('welcome');
 });
 
-Route::get("hello", "HelloController@index");
+// Route::get('hello', function () {
+//     // view('フォルダ名 . ファイル名')
+//     return view('hello.index');
+// });
+
+Route::get('/hello/{id?}', [HelloController::class, 'index']);
