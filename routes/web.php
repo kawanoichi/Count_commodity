@@ -23,4 +23,7 @@ Route::get('/', function () {
 //     return view('hello.index');
 // });
 
-Route::get('/hello/{id?}', [HelloController::class, 'index']);
+// Route::get('表示するURL', [クラス名::class, '関数名']);
+// Route::get('/hello/{id?}', [HelloController::class, 'index']);
+// Route::post('/hello/{id?}', [HelloController::class, 'post']);
+Route::get('/hello', [HelloController::class, 'index']);
